@@ -3,6 +3,7 @@ import PropsTypes from "prop-types";
 const ActionComponent = (props) => {
   const { setAge } = props;
   const age2up = (e) => {
+    console.log("Hi");
     setAge(2, 19);
   };
   return (
