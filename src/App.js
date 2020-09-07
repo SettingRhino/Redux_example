@@ -6,6 +6,7 @@ import configureStore from "./configureStore";
 import { setCollection, setAge } from "./actions/collectionAction";
 import PresentationComponent from "./PresentationComponent";
 import ContainerComponent from "./containers/ContainerComponent";
+import DispatchContainer from "./containers/DispatchContainer";
 export default function App() {
   const store = configureStore({});
   useEffect(() => {
@@ -35,6 +36,11 @@ export default function App() {
         <div>
           데이터 컴포넌트 :
           <ContainerComponent id={2} />
+        </div>
+        <hr />
+        <div>
+          액션 데이터 컴포넌트:
+          <DispatchContainer />
         </div>
       </div>
     </Provider>
