@@ -4,6 +4,8 @@ import configureStore from "./configureStore";
 //import { setLoading, resetLoading } from "./actions/loadingActions";
 //import { setUser } from "./actions/userActions";
 import { setCollection, setAge } from "./actions/collectionAction";
+import PresentationComponent from "./PresentationComponent";
+import ContainerComponent from "./containers/ContainerComponent";
 export default function App() {
   const store = configureStore({});
   useEffect(() => {
@@ -20,13 +22,20 @@ export default function App() {
     console.log(originalPayload);
     // store.dispatch(setLoading(true));
     // store.dispatch(resetLoading());
-    // store.dispatch(setUser({ name: "PPP", age: 25 }));
+    //store.dispatch(setUser({ name: "PPP", age: 25 }));
   }, []);
   return (
     <Provider store={store}>
       <div className="App">
-        <h1>Hello CodeSandbox</h1>
-        <h2>Start editing to see some magic happen!</h2>
+        <div>
+          화면 컴포넌트:
+          <PresentationComponent userName="화면컴포넌트" />
+        </div>
+        <hr />
+        <div>
+          데이터 컴포넌트 :
+          <ContainerComponent id={2} />
+        </div>
       </div>
     </Provider>
   );
